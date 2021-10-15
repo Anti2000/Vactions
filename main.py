@@ -38,9 +38,10 @@ diff_date = b - a
 
 dateOneAct, dateTwoAct = a + delta + delta, b + delta + delta
 
+amount_of_ads = 4
+
 dif_delta = 30 / amount_of_ads
-delta > abc(a - b) need to less delta
-delta < (a - b) need to more delta
+
 
 # first sitation a = 1, b = 17, now = 18
 if diff_date > delta:
