@@ -38,7 +38,7 @@ diff_date = b - a
 
 dateOneAct, dateTwoAct = a + delta + delta, b + delta + delta
 
-amount_of_ads = 4
+amount_of_ads = 2
 
 dif_delta = 30 / amount_of_ads
 
