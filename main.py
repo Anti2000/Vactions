@@ -30,7 +30,7 @@ deltaNull = timedelta(0)
 
 
 a = datetime(2021, 10, 1)
-b = datetime(2021, 10, 1)
+b = datetime(2021, 10, 5)
 c = datetime(2021, 10, 1)
 d = datetime(2021, 10, 1)
 today = datetime(2021, 10, 18)
@@ -40,26 +40,43 @@ dateOneAct, dateTwoAct = a + delta + delta, b + delta + delta
 
 amount_of_ads = 2
 
-dif_delta = 30 / amount_of_ads
+if a == b:
+    a = a + timedelta(1)
+
+dif_delta = timedelta(30 / amount_of_ads)
+
+class Count_of_bias:
+    def __init__(self):
+        pass
+    def date_ads(self, data_ad, delta):
+        self.data_ad = data_ad
+        self.delta = delta
+        return self.data_ad + self.delta
+
+p1 = Count_of_bias()
+
 
 
 # first sitation a = 1, b = 17, now = 18
 if diff_date > delta:
-    dateOneAct = b + delta
+    dateOneAct = p1.date_ads(b, delta)
+
 
 # second sitation a = 17, b = 1, now = 18
 if diff_date < deltaMinus:
-    dateTwoAct = a + delta
+    dateTwoAct = p1.date_ads(a, delta)
+
 
 # third sitation a = 1, b = 10, now = 18
 if deltaNull < diff_date < delta:
-    dateOneAct = b + delta * 2
-    dateTwoAct = b + delta
+    dateOneAct = p1.date_ads(b, delta*2)
+    dateTwoAct = p1.date_ads(b, delta)
+
 
 # four sitation a = 10, b = 1, now = 18
 if deltaMinus < diff_date < deltaNull:
-    dateOneAct = a + delta
-    dateTwoAct = a + delta * 2
+    dateOneAct = p1.date_ads(a, delta)
+    dateTwoAct = p1.date_ads(a, delta*2)
 
 dateThirdAct = dateOneAct + delta7plus
 dateForthAct = dateTwoAct + delta7plus
@@ -67,10 +84,10 @@ dateForthAct = dateTwoAct + delta7plus
 branch = 'ФИЛИАЛ'
 #
 print(f"{branch}  {'дата акт'}                   {'дата след.акт.'}")
-print(f"{'      '}{a}    {dateOneAct}   {''}")
-print(f"{'      '}{b}    {dateTwoAct}   {'  '}")
-print(f"{'      '}{c}    {dateThirdAct}   {''}")
-print(f"{'      '}{d}    {dateForthAct}   {'  '}")
+print(f"{'     1 '}{a}    {dateOneAct}   {''}")
+print(f"{'     2 '}{b}    {dateTwoAct}   {'  '}")
+print(f"{'     3 '}{c}    {dateThirdAct}   {''}")
+print(f"{'     4 '}{d}    {dateForthAct}   {'  '}")
 
 # if __name__ == '__main__':
 #     main()
